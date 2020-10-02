@@ -1,6 +1,6 @@
 /* 
  *Copyright(C),2020,NEFU
- *FileName: time
+ *FileName: time.cpp
  *Author:   d_chen
  *Version:  1.0
  *Date:     2020.10.02
