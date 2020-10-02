@@ -19,14 +19,13 @@
  *History:  //修改历史记录列表，每条修改记录应包含修改日期、修改者及修改内容简介
 
  *Return:
-        0:月份输入错误
+        1:月份输入错误
     
 */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-int CaculateWeekDay(int y,int m, int d);
+#include "func.h"
 
 int main()
 {
@@ -60,7 +59,7 @@ int main()
     }
     
     //判断闰年
-    if ((( year%4 == 0 ) && ( year%100 != 0 ) || ( year%400 == 0 ))){
+    if (((( year%4 == 0 ) && ( year%100 != 0 )) || ( year%400 == 0 ))){
         MonthDay[1]=29;
     }
 
@@ -90,14 +89,4 @@ int main()
         }
     }
     return 0;
-}
-
-int CaculateWeekDay(int y,int m, int d)
-{
-    if(m==1||m==2) {
-        m+=12;
-        y--;
-    }
-    int iWeek=(d+2*m+3*(m+1)/5+y+y/4-y/100+y/400)%7;
-    return iWeek + 1;
 }

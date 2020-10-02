@@ -1,9 +1,9 @@
-CC = gcc
+CC = g++ 
 VERSION = -g -std=c++11 -Wall
 INCLUDE = -I../include -lglut -lGL
-TARGET = ../bin/time
-SRCS = $(wildcard *.c)
-OBJS = $(patsubst %c,%o,$(SRCS))
+TARGET = ../bin/Time
+SRCS = $(wildcard *.cpp)
+OBJS = $(patsubst %cpp,%o,$(SRCS))
 
 all:$(TARGET)
 	
