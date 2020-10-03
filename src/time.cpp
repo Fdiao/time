@@ -33,7 +33,7 @@
             2020.10.3  模块化，添加判断是否闰年函数，判断输入月份是否正确函数,打印时间函数
 
  *Return:
-    
+        1:月份输入错误次数过多，防止死循环
 */
 #include "common.h"
 #include "func.h"
@@ -45,6 +45,7 @@ int main()
     char time_amorpm[2][7] = {"",""};
     int lyear = -1;
     int month_sts = 1;
+    int safe_nu = 0;
     
     printf("please input years:");
     scanf("%d",&year);
@@ -53,9 +54,14 @@ int main()
         printf("please input month:");
         scanf("%d",&month);
         month_sts = checkmonth(month);
+        safe_nu++;
+        if(safe_nu == 5){
+            printf("输入错误次数过多，程序结束！\n");
+            return 1;
+        }
     }
 
-    printf("plese input morning time:  eg:7:5,则生成7:50-7:59之间的时间,下同\n");
+    printf("plese input morning time:  \neg:7:5,则生成7:50-7:59之间的时间,下同\n");
     scanf("%s",time_amorpm[1]);
     
     printf("plese input evening time:\n");
