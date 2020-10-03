@@ -13,12 +13,12 @@
     1.int isLeapYear(int year);
         参数1:年
         返回值: 1:为闰年
-                2:非闰年
+                0:非闰年
  *History:  //修改历史记录列表，每条修改记录应包含修改日期、修改者及修改内容简介
 
  *Return:
         1:为闰年
-        2:非闰年
+        0:非闰年
 */
 
 int isLeapYear(int year){
